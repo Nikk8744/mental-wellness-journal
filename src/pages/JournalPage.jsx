@@ -11,7 +11,7 @@ const JournalPage = () => {
     // }
   
   return (
-    <div className='p-8 bg-gray-100 min-h-screen w-screen'>
+    <div className='p-8 bg-[#EFE3C2] min-h-screen w-screen'>
         <h1 className='text-2xl font-bold md-4'>Journal Your Thoughts</h1>
         <JournalEntry />
     </div>

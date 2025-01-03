@@ -48,12 +48,14 @@ const Carousel = () => {
           justifyContent: 'center',
           alignItems: 'center',
           position: 'relative',
+                 borderRadius: '5px',
         },
         image: {
           width: '100%',
           height: 'auto',
           objectFit: 'cover',
           maxHeight: '400px', // You can adjust this height based on your design requirements
+          borderRadius: '15px',
         },
         caption: {
           position: 'absolute',
@@ -67,7 +69,7 @@ const Carousel = () => {
       };
 
   return (
-    <div>
+    <div className='pt-10'>
     <Box sx={styles.carouselWrapper}>
       <IconButton sx={styles.arrowButton} onClick={handlePrev}>
         <ArrowBack />

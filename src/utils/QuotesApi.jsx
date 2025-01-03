@@ -12,7 +12,7 @@ export const QuotesApi = async () => {
         "X-Api-Key": import.meta.env.VITE_API_KEY,
       }
     });
-    console.log("Response", response.data)
+    // console.log("Response", response.data)
     if (response.data && response.data.length > 0) {
       return {
         quote: response.data[0].quote,

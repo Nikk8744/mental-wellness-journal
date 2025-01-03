@@ -38,18 +38,18 @@ const Navbar = () => {
     //         </NavigationMenuList>
     //     </NavigationMenu>
     // </div>
-    <nav className="bg-black p-4 text-white flex justify-between items-center">
+    <nav className="bg-[#85A947] p-4 text-white flex justify-between items-center">
         {/* right side of the navbar */}
-      <div>
-        <NavLink to="/" className="text-2xl font-bold hover:scale-125 text-yellow-500 tracking-widest"> Mental Wellness </NavLink>
+      <div className='hover:scale-105'>
+        <NavLink to="/" className="text-2xl font-bold text-[#123524] tracking-widest"> Mental Wellness </NavLink>
       </div>
 
     {/* the left side content  */}
       <div className='flex p-1 space-x-16 '>
-        <NavLink to="/" className="text-white text-lg hover:text-gray-400 tracking-wider active:text-yellow-400">Home</NavLink>
-        <NavLink to="/journal" className="text-white text-lg hover:text-gray-400 tracking-wider">Journal</NavLink>
-        <NavLink to="/quotes" className="text-white text-lg hover:text-gray-400 tracking-wider">Quotes</NavLink>
-        <NavLink to="/mood" className="text-white text-lg hover:text-gray-400 tracking-wider">Mood</NavLink>
+        <NavLink to="/" className="text-[#123524] text-lg hover:text-gray-500 tracking-wider hover:scale-105 active:text-black">Home</NavLink>
+        <NavLink to="/journal" className="text-[#123524] text-lg hover:text-gray-500 hover:scale-105 tracking-wider">Journal</NavLink>
+        <NavLink to="/quotes" className="text-[#123524] text-lg hover:text-gray-500 hover:scale-105 tracking-wider">Quotes</NavLink>
+        <NavLink to="/mood" className="text-[#123524] text-lg hover:text-gray-500 hover:scale-105 tracking-wider">Mood</NavLink>
       </div>
     </nav>
   )

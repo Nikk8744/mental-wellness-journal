@@ -27,9 +27,15 @@ const Quotes = () => {
     transform: 'translate(-50%, -50%)',
     width: 400,
     bgcolor: 'background.paper',
-    border: '2px solid #000',
+    border: '5px solid #000',
     boxShadow: 24,
+    borderRadius: "10px",
     p: 4,
+    display: 'flex',  
+    flexDirection: 'column',  // Stack elements vertically
+    alignItems: 'center',  // Horizontally center elements
+    justifyContent: 'center',  // Vertically center elements
+    textAlign: 'left'
   };
   
   const [open, setOpen] = useState(false);
@@ -47,8 +53,8 @@ const Quotes = () => {
   }
   if (!quote) return null;
   return (
-    <div className='text-center m-7'>
-      <Button onClick={handleOpen} variant="contained" color="primary">Open modal</Button>
+    <div className='text-center m-7 text-[#123524]'>
+      <Button onClick={handleOpen} variant="contained" color="success">Open modal</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -63,7 +69,7 @@ const Quotes = () => {
             {quote.quote}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {quote.author}
+            Author: {quote.author}
           </Typography>
         </Box>
       </Modal>

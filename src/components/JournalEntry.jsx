@@ -38,7 +38,7 @@ const JournalEntry = () => {
 
   return (
     <div>
-        <Box className="p-4 bg-white  rounded shadow-md">
+        <Box className="p-4 bg-white flex flex-col items-center rounded shadow-md">
             <TextField
                 label="Your Thoughts"
                 multiline 
@@ -54,7 +54,7 @@ const JournalEntry = () => {
                     <Chip key={mood} label={mood} onClick={() => handleClick(mood)} className="mr-5 mb-4 cursor-pointer" color={moodTag.includes(mood) ? 'primary' : 'default'} />
                 ))}
             </Box>
-            <Button variant="contained" color='primary' className='mt-4' onClick={onSubmit}>Save Entry</Button>
+            <Button variant="contained" color='success' size='large'  className='mt-4' onClick={onSubmit}>Save Entry</Button>
         </Box>
     </div>
   )
