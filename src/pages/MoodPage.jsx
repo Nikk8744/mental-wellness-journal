@@ -1,4 +1,4 @@
-import MoodTracker from "@/components/MoodTracker"
+import MoodTracker from "@/components/MoodTracker";
 
 const MoodPage = () => {
   return (
@@ -6,7 +6,7 @@ const MoodPage = () => {
       <h1 className="text-4xl font-bold text-center mb-4">Mood Page</h1>
       <MoodTracker />
     </div>
-  )
-}
+  );
+};
 
-export default MoodPage
+export default MoodPage;

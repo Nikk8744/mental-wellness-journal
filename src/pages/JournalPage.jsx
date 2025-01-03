@@ -11,11 +11,10 @@ const JournalPage = () => {
     // }
   
   return (
-    <div className='p-8 bg-[#EFE3C2] min-h-screen w-screen'>
-        <h1 className='text-2xl font-bold md-4'>Journal Your Thoughts</h1>
+    <div className=' bg-[#EFE3C2] min-h-'>
+        <h1 className='text-3xl font-mono font-bold text-center p-6'>Journal Your Thoughts</h1>
         <JournalEntry />
     </div>
   )
 }
-
 export default JournalPage

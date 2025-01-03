@@ -1,58 +1,93 @@
 import { NavLink } from 'react-router-dom';
-// import {
-//     NavigationMenu,
-//     // NavigationMenuContent,
-//     NavigationMenuItem,
-//     NavigationMenuLink,
-//     NavigationMenuList,
-//     // NavigationMenuTrigger,
-//   } from "@/components/ui/navigation-menu"
-
+import { useState } from 'react';
 
 const Navbar = () => {
+  // State to manage the mobile menu toggle
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Function to toggle the mobile menu
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    // <div className="flex items-start justify-start bg-black text-white ">
-    //     <NavigationMenu className="max-w-screen">
-    //         <NavigationMenuList className="flex items-center justify-between p-6">
-
-    //             <NavigationMenuItem className="font-bold text-lg text-white">  
-    //                 <NavigationMenuLink href="/" className="hover:text-gray-300">Mental Wellness</NavigationMenuLink>
-    //             </NavigationMenuItem>
-       
-
-    //             {/* all navigation links */}
-    //             <div className="space-x-6 p-3"> 
-    //                 <NavigationMenuItem>
-    //                     <NavigationMenuLink href="/" className="text-white hover:text-gray-300">Home</NavigationMenuLink>
-    //                 </NavigationMenuItem>
-    //                 <NavigationMenuItem>
-    //                     <NavigationMenuLink href="/journal" className="text-white hover:text-gray-300">Journal</NavigationMenuLink>
-    //                 </NavigationMenuItem>
-    //                 <NavigationMenuItem>
-    //                     <NavigationMenuLink href="/mood" className="text-white hover:text-gray-300">Mood Tracker</NavigationMenuLink>
-    //                 </NavigationMenuItem>
-    //                 <NavigationMenuItem>
-    //                     <NavigationMenuLink href="/quotes" className="text-white hover:text-gray-300">Inspirational</NavigationMenuLink>
-    //                 </NavigationMenuItem>
-    //             </div>
-    //         </NavigationMenuList>
-    //     </NavigationMenu>
-    // </div>
-    <nav className="bg-[#85A947] p-4 text-white flex justify-between items-center">
-        {/* right side of the navbar */}
-      <div className='hover:scale-105'>
-        <NavLink to="/" className="text-2xl font-bold text-[#123524] tracking-widest"> Mental Wellness </NavLink>
+    <nav className="bg-[#BAD8B6] p-4 text-[#123524] flex justify-between items-center">
+      {/* Logo Section */}
+      <div className="hover:scale-105">
+        <NavLink to="/" className="text-2xl font-bold tracking-widest">
+          Mental Wellness
+        </NavLink>
       </div>
 
-    {/* the left side content  */}
-      <div className='flex p-1 space-x-16 '>
-        <NavLink to="/" className="text-[#123524] text-lg hover:text-gray-500 tracking-wider hover:scale-105 active:text-black">Home</NavLink>
-        <NavLink to="/journal" className="text-[#123524] text-lg hover:text-gray-500 hover:scale-105 tracking-wider">Journal</NavLink>
-        <NavLink to="/quotes" className="text-[#123524] text-lg hover:text-gray-500 hover:scale-105 tracking-wider">Quotes</NavLink>
-        <NavLink to="/mood" className="text-[#123524] text-lg hover:text-gray-500 hover:scale-105 tracking-wider">Mood</NavLink>
+      {/* Hamburger Menu (Visible on Small Screens) */}
+      <div className="md:hidden">
+        <button
+          onClick={toggleMenu}
+          type="button"
+          className="text-[#123524] hover:text-[#3E7B27] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3E7B27]"
+          aria-controls="mobile-menu"
+          aria-expanded={isOpen}
+          aria-label="Toggle navigation menu"
+        >
+          {/* Hamburger Icon */}
+          {!isOpen ? (
+            <svg
+              className="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
+            </svg>
+          ) : (
+            // Close Icon
+            <svg
+              className="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {/* Navigation Links */}
+      <div className={`flex flex-col md:flex-row items-center ${isOpen ? 'block' : 'hidden'} md:block`} id="mobile-menu">
+        <NavLink
+          to="/"
+          className="mt-2 md:mt-0 md:ml-6 text-lg hover:text-gray-500 tracking-wider hover:scale-105 active:text-black transition-transform duration-200"
+          onClick={() => setIsOpen(false)} // Close menu on link click
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/journal"
+          className="mt-2 md:mt-0 md:ml-6 text-lg hover:text-gray-500 tracking-wider hover:scale-105 transition-transform duration-200"
+          onClick={() => setIsOpen(false)}
+        >
+          Journal
+        </NavLink>
+        <NavLink
+          to="/quotes"
+          className="mt-2 md:mt-0 md:ml-6 text-lg hover:text-gray-500 tracking-wider hover:scale-105 transition-transform duration-200"
+          onClick={() => setIsOpen(false)}
+        >
+          Quotes
+        </NavLink>
+        <NavLink
+          to="/mood"
+          className="mt-2 md:mt-0 md:ml-6 text-lg hover:text-gray-500 tracking-wider hover:scale-105 transition-transform duration-200"
+          onClick={() => setIsOpen(false)}
+        >
+          Mood
+        </NavLink>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

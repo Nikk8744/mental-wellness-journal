@@ -1,5 +1,5 @@
 // import React from 'react'
-import { Box, IconButton, Typography } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
 import { ArrowForward, ArrowBack } from '@mui/icons-material';
 import { useState } from 'react';
 import img1 from '../assets/img1.avif'
@@ -81,9 +81,6 @@ const Carousel = () => {
           alt={`carousel-image-${currentIndex}`}
           style={styles.image}
         />
-        <Typography sx={styles.caption}>
-          {`Image ${currentIndex + 1}`} {/* You can add more details or dynamic captions here */}
-        </Typography>
       </Box>
       
       <IconButton sx={styles.arrowButton} onClick={handleNext}>

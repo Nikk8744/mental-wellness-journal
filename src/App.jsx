@@ -8,7 +8,7 @@ import QuotePage from './pages/QuotePage'
 
 const App = () => {
   return (
-    <div>
+    <div className='bg-[#EFE3C2]'>
       <Router>
         <Layout>
           <Routes>
