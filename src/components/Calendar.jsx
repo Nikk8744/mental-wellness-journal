@@ -38,7 +38,7 @@ const Calendar = () => {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <div className="flex flex-col lg:flex-row p-4 bg-[#85A947] rounded shadow-md space-y-6 lg:space-y-0 lg:space-x-6">
+      <div className="flex flex-col lg:flex-row p-4 bg-[#BAD8B6] rounded shadow-md space-y-6 lg:space-y-0 lg:space-x-6">
         {/* Calendar Section */}
         <div className="flex-shrink-0 w-full lg:w-1/3">
           <h2 className="text-xl font-semibold mb-4 text-center">Your Calendar</h2>

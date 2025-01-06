@@ -52,6 +52,8 @@ const MoodTracker = () => {
     const updatedMood = [...moodData, newMoodEntry];
     setMoodData(updatedMood);
     localStorage.setItem("moodEntries", JSON.stringify(updatedMood));
+
+    // setMoodData([])
   };
 
   useEffect(() => {
